@@ -1,0 +1,11 @@
+module.exports.authService = require("./auth.service");
+module.exports.emailService = require("./email.service");
+module.exports.photoService = require("./photo.service");
+module.exports.videoService = require("./video.service");
+module.exports.blogService = require("./blog.service");
+module.exports.teamService = require("./team.service");
+module.exports.pressService = require("./press.service");
+module.exports.contactService = require("./contact.service");
+module.exports.commentService = require("./comment.service");
+module.exports.packageService = require("./package.service");
+module.exports.orderService = require("./order.service");
