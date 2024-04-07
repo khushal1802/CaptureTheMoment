@@ -27,33 +27,39 @@ const PaymentForm = () => {
     event.preventDefault();
     setIsSubmitting(true);
 
-    const errors = {};
+     const emailRegex = /^[^\s@]+@[^\s@]+\.(com|net|org)$/;
+     const currentDate = new Date();
+     const enteredDate = new Date(date.current.value);
+     const errors = {};
 
-    if (!uname.current.value) {
-      errors.name = "Name is required";
-    }
+     if (!uname.current.value.trim()) {
+       errors.name = "Name is required";
+     }
 
-    if (!email.current.value) {
-      errors.email = "Email is required";
-    } else if (!validateEmail(email.current.value)) {
-      errors.email = "Invalid email format";
-    }
+     if (!date.current.value.trim()) {
+       errors.date = "Date is required";
+     } else if (enteredDate <= currentDate) {
+       errors.date = "Please select a future date";
+     }
 
-    if (!date.current.value) {
-      errors.date = "Date is required";
-    }
+     if (!email.current.value.trim()) {
+       errors.email = "Email is required";
+     } else if (!emailRegex.test(email.current.value)) {
+       errors.email =
+         "Please enter a valid email address with 'com', 'net', or 'org' domain";
+     }
 
-    if (!address.current.value) {
-      errors.address = "Address is required";
-    }
+     if (!address.current.value.trim()) {
+       errors.address = "Address is required";
+     }
 
-    if (!price.current.value) {
-      errors.price = "Price is required";
-    }
+     if (!price.current.value.trim()) {
+       errors.price = "Price is required";
+     }
 
-    if (!title.current.value) {
-      errors.title = "Title is required";
-    }
+     if (!title.current.value.trim()) {
+       errors.title = "Title is required";
+     }
 
     if (Object.keys(errors).length === 0) {
       if (elements == null) {
@@ -104,7 +110,7 @@ const PaymentForm = () => {
             elements,
             clientSecret,
             confirmParams: {
-              return_url: "http://localhost:3000/order",
+              return_url: "http://localhost:3000/booking",
             },
           },
           toast.success("Payment success 😊!", {
