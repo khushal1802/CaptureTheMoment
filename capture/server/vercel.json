@@ -7,6 +7,159 @@
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/" }
+    { "src": "/v1/auth/login", "dest": "http://localhost:5000/v1/auth/login" },
+    {
+      "src": "/v1/auth/create",
+      "dest": "http://localhost:5000/v1/auth/create"
+    },
+    { "src": "/v1/auth/list", "dest": "http://localhost:5000/v1/auth/list" },
+    {
+      "src": "/v1/auth/update/:id",
+      "dest": "http://localhost:5000/v1/auth/update/:id"
+    },
+    {
+      "src": "/v1/auth/delete/:id",
+      "dest": "http://localhost:5000/v1/auth/delete/:id"
+    },
+
+    {
+      "src": "/v1/photo/create",
+      "dest": "http://localhost:5000/v1/photo/create"
+    },
+    { "src": "/v1/photo/list", "dest": "http://localhost:5000/v1/photo/list" },
+    {
+      "src": "/v1/photo/update/:id",
+      "dest": "http://localhost:5000/v1/photo/update/:id"
+    },
+    {
+      "src": "/v1/photo/delete/:id",
+      "dest": "http://localhost:5000/v1/photo/delete/:id"
+    },
+
+    {
+      "src": "/v1/video/create",
+      "dest": "http://localhost:5000/v1/video/create"
+    },
+    { "src": "/v1/video/list", "dest": "http://localhost:5000/v1/video/list" },
+    {
+      "src": "/v1/video/update/:id",
+      "dest": "http://localhost:5000/v1/video/update/:id"
+    },
+    {
+      "src": "/v1/video/delete/:id",
+      "dest": "http://localhost:5000/v1/video/delete/:id"
+    },
+
+    {
+      "src": "/v1/blog/create",
+      "dest": "http://localhost:5000/v1/blog/create"
+    },
+    { "src": "/v1/blog/list", "dest": "http://localhost:5000/v1/blog/list" },
+    {
+      "src": "/v1/blog/update/:id",
+      "dest": "http://localhost:5000/v1/blog/update/:id"
+    },
+    {
+      "src": "/v1/blog/delete/:id",
+      "dest": "http://localhost:5000/v1/blog/delete/:id"
+    },
+
+    {
+      "src": "/v1/team/create",
+      "dest": "http://localhost:5000/v1/team/create"
+    },
+    { "src": "/v1/team/list", "dest": "http://localhost:5000/v1/team/list" },
+    {
+      "src": "/v1/team/update/:id",
+      "dest": "http://localhost:5000/v1/team/update/:id"
+    },
+    {
+      "src": "/v1/team/delete/:id",
+      "dest": "http://localhost:5000/v1/team/delete/:id"
+    },
+
+    {
+      "src": "/v1/press/create",
+      "dest": "http://localhost:5000/v1/press/create"
+    },
+    { "src": "/v1/press/list", "dest": "http://localhost:5000/v1/press/list" },
+    {
+      "src": "/v1/press/update/:id",
+      "dest": "http://localhost:5000/v1/press/update/:id"
+    },
+    {
+      "src": "/v1/press/delete/:id",
+      "dest": "http://localhost:5000/v1/press/delete/:id"
+    },
+
+    {
+      "src": "/v1/contact/create",
+      "dest": "http://localhost:5000/v1/contact/create"
+    },
+    {
+      "src": "/v1/contact/list",
+      "dest": "http://localhost:5000/v1/contact/list"
+    },
+    {
+      "src": "/v1/contact/update/:id",
+      "dest": "http://localhost:5000/v1/contact/update/:id"
+    },
+    {
+      "src": "/v1/contact/delete/:id",
+      "dest": "http://localhost:5000/v1/contact/delete/:id"
+    },
+
+    {
+      "src": "/v1/comment/create",
+      "dest": "http://localhost:5000/v1/comment/create"
+    },
+    {
+      "src": "/v1/comment/list",
+      "dest": "http://localhost:5000/v1/comment/list"
+    },
+    {
+      "src": "/v1/comment/update/:id",
+      "dest": "http://localhost:5000/v1/comment/update/:id"
+    },
+    {
+      "src": "/v1/comment/delete/:id",
+      "dest": "http://localhost:5000/v1/comment/delete/:id"
+    },
+
+    {
+      "src": "/v1/package/create",
+      "dest": "http://localhost:5000/v1/package/create"
+    },
+    {
+      "src": "/v1/package/list",
+      "dest": "http://localhost:5000/v1/package/list"
+    },
+    {
+      "src": "/v1/package/update/:id",
+      "dest": "http://localhost:5000/v1/package/update/:id"
+    },
+    {
+      "src": "/v1/package/delete/:id",
+      "dest": "http://localhost:5000/v1/package/delete/:id"
+    },
+
+    {
+      "src": "/v1/order/create",
+      "dest": "http://localhost:5000/v1/order/create"
+    },
+    { "src": "/v1/order/list", "dest": "http://localhost:5000/v1/order/list" },
+    {
+      "src": "/v1/order/update/:id",
+      "dest": "http://localhost:5000/v1/order/update/:id"
+    },
+    {
+      "src": "/v1/order/delete/:id",
+      "dest": "http://localhost:5000/v1/order/delete/:id"
+    },
+
+    {
+      "src": "/v1/payment/create-payment",
+      "dest": " http://localhost:5000/v1/payment/create-payment"
+    }
   ]
 }
