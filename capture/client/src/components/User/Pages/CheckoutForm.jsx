@@ -9,7 +9,6 @@ import {
 import Cookies from "js-cookie";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 
 const PaymentForm = () => {
   const uname = useRef();
@@ -28,37 +27,31 @@ const PaymentForm = () => {
     event.preventDefault();
     setIsSubmitting(true);
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.(com|net|org)$/;
-    const currentDate = new Date();
-    const enteredDate = new Date(date.current.value);
     const errors = {};
 
-    if (!uname.current.value.trim()) {
+    if (!uname.current.value) {
       errors.name = "Name is required";
     }
 
-    if (!date.current.value.trim()) {
-      errors.date = "Date is required";
-    } else if (enteredDate <= currentDate) {
-      errors.date = "Please select a future date";
-    }
-
-    if (!email.current.value.trim()) {
+    if (!email.current.value) {
       errors.email = "Email is required";
-    } else if (!emailRegex.test(email.current.value)) {
-      errors.email =
-        "Please enter a valid email address with 'com', 'net', or 'org' domain";
+    } else if (!validateEmail(email.current.value)) {
+      errors.email = "Invalid email format";
     }
 
-    if (!address.current.value.trim()) {
+    if (!date.current.value) {
+      errors.date = "Date is required";
+    }
+
+    if (!address.current.value) {
       errors.address = "Address is required";
     }
 
-    if (!price.current.value.trim()) {
+    if (!price.current.value) {
       errors.price = "Price is required";
     }
 
-    if (!title.current.value.trim()) {
+    if (!title.current.value) {
       errors.title = "Title is required";
     }
 
@@ -111,7 +104,7 @@ const PaymentForm = () => {
             elements,
             clientSecret,
             confirmParams: {
-              return_url: "http://localhost:3000/booking",
+              return_url: "http://localhost:3000/order",
             },
           },
           toast.success("Payment success 😊!", {
@@ -123,11 +116,7 @@ const PaymentForm = () => {
             draggable: true,
             progress: undefined,
             theme: "dark",
-          }),
-          (uname.current.value = ""),
-          (email.current.value = ""),
-          (date.current.value = ""),
-          (address.current.value = "")
+          })
         );
 
         if (error) {
@@ -176,10 +165,10 @@ const PaymentForm = () => {
     }
   };
 
-  // const validateEmail = (email) => {
-  //   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   return regex.test(email);
-  // };
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
 
   return (
     <div className="book-package">
@@ -303,9 +292,6 @@ const PaymentForm = () => {
               Pay and Book Now
             </button>
           </div>
-          <Link to={"/booking"} className="goHomePageBtn mt-3 w-100">
-            Go to Booking Page
-          </Link>
 
           {errorMessage.submit && (
             <div className="error" style={{ color: "red" }}>
