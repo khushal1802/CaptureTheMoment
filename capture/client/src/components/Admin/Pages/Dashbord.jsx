@@ -39,7 +39,7 @@ function Dashbord() {
                 Total Number of User
                 <CountUp
                   start={0}
-                  end={45214625}
+                  end={452146}
                   duration={2.75}
                   separator=" "
                   decimal=","
@@ -176,7 +176,7 @@ function Dashbord() {
                 Total Number of Images
                 <CountUp
                   start={0}
-                  end={160527012}
+                  end={16052701}
                   duration={2.75}
                   separator=" "
                   decimal=","
@@ -209,7 +209,7 @@ function Dashbord() {
                 Total Number of Video
                 <CountUp
                   start={0}
-                  end={96351802}
+                  end={9635180}
                   duration={2.75}
                   separator=" "
                   decimal=","
